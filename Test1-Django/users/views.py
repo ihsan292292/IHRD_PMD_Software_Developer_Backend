@@ -24,7 +24,9 @@ class RegisterViewSet(CreateViewSet):
         password = request.data.get('password', None)
         phone_number = request.data.get('phone_number')
 
-        # TODO: Validations
+        # TODO: Validations (Example: Check if email or phone number already exists)
+        if get_user_model().objects.filter(email=email).exists():
+            return Response({'code': 400, 'message': 'Email already exists'})
 
         user = get_user_model().objects.create_user(request.data)
 
@@ -32,6 +34,11 @@ class RegisterViewSet(CreateViewSet):
             {'code': 200, 'message': 'success', 'user_id': user._get_pk_val()},
         )
 
+from rest_framework import status
+from rest_framework_jwt.settings import api_settings
+
+jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
 class LoginViewSet(CreateViewSet):
     authentication_classes = ()
@@ -41,24 +48,36 @@ class LoginViewSet(CreateViewSet):
     def create(self, request, *args, **kwargs):
         email = request.data.get('email')
         password = request.data.get('password')
-        # TODO: validation
-        user_obj = get_user_model().objects.get(email=email, password=password)
-        # TODO:  generate token with jwt library
-        # TODO: Update the Login activity
+         # Authenticate the user
+        user = get_user_model().objects.filter(email=email).first()
 
-        user_obj.last_login = timezone.now()
-        return Response(
-            {
-                'code': 200,
-                'message': 'success',
-                'access_token': '',
-                'refresh_token': 'refresh_token',
-                'user_id': user_obj.pk,
-                'name': user_obj.first_name,
-                'email': user_obj.email,
-                'last_login': user_obj.last_login,
-            },
-        )
+        if user and user.check_password(password):
+            # Update last login time
+            user.last_login = timezone.now()
+            user.save()
+
+            # Generate JWT tokens
+            payload = jwt_payload_handler(user)
+            access_token = jwt_encode_handler(payload)
+
+
+            return Response(
+                {
+                    'code': 200,
+                    'message': 'success',
+                    'access_token': access_token,
+                    'refresh_token': 'refresh_token',
+                    'user_id': user.pk,
+                    'name': user.first_name,
+                    'email': user.email,
+                    'last_login': user.last_login,
+                }, status=status.HTTP_200_OK)
+        else:
+            return Response({
+                'code': 401,
+                'message': 'Invalid credentials'
+            }, status=status.HTTP_401_UNAUTHORIZED)
+        
 
 
 class MeViewSet(ListViewSet):
