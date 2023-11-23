@@ -7,8 +7,8 @@
 
 # Check if email or phone number already exists in registration
  
- if get_user_model().objects.filter(email=email).exists():
-      return Response({'code': 400, 'message': 'Email already exists'})
+	 if get_user_model().objects.filter(email=email).exists():
+	      return Response({'code': 400, 'message': 'Email already exists'})
       
       
 # Authenticate the user in login function 
