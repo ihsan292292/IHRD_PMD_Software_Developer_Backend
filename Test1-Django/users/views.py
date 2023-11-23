@@ -13,7 +13,6 @@ from core_viewsets.custom_viewsets import ListViewSet
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.viewsets import ViewSet
-from django.shortcuts import render
 from .models import CountryPopulation
 
 
@@ -105,6 +104,4 @@ class MeViewSet(ViewSet, RetrieveAPIView):
 import json
 
 #############       
-def population_chart(request):
-    population_data = CountryPopulation.objects.all()
-    return render(request, 'population_chart.html', {'population_data': population_data})
+

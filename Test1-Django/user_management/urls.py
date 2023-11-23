@@ -29,15 +29,14 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 from rest_framework.permissions import AllowAny
 from rest_framework.schemas import get_schema_view
+from django.shortcuts import render
 
 
-@require_http_methods(['GET'])
-def home(request):
-    return HttpResponse('<h1>Django is running, <br> Now you can customise this page </h1>')
+from visualization import display_population_table
 
 
 urlpatterns = [
-    url(r'^$',  home),
+    url(r'^$',  display_population_table),
     path('api/admin/', admin.site.urls),
     path('api/user/', include('users.urls')),
 
