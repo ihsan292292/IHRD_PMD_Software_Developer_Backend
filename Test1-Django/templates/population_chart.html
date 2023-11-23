@@ -1,0 +1,36 @@
+<!-- population_chart.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Population Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="populationChart" width="800" height="400"></canvas>
+
+    <script>
+        var ctx = document.getElementById('populationChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [{% for entry in population_data %}'{{ entry.country }}',{% endfor %}],
+                datasets: [{
+                    label: 'Population by Country',
+                    data: [{% for entry in population_data %}{{ entry.population }},{% endfor %}],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

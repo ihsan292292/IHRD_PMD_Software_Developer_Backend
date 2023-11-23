@@ -38,7 +38,6 @@ class UserSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=200)
     last_name = serializers.CharField(max_length=200)
     phone_number = serializers.CharField(max_length=200)
-    image_name = serializers.CharField(max_length=300)
 
     class Meta:
         model = get_user_model()
@@ -48,7 +47,6 @@ class UserSerializer(serializers.ModelSerializer):
             'first_name',
             'last_name',
             'phone_number',
-            'image_name',
         )
 
 

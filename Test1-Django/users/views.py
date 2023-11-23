@@ -6,8 +6,16 @@ from rest_framework.response import Response
 
 from .serializers import LoginSerializer
 from .serializers import RegisterSerializer
+from .serializers import UserSerializer
+from rest_framework.generics import RetrieveAPIView
 from core_viewsets.custom_viewsets import CreateViewSet
 from core_viewsets.custom_viewsets import ListViewSet
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.viewsets import ViewSet
+from django.shortcuts import render
+from .models import CountryPopulation
+
 
 # Create your views here.
 
@@ -80,12 +88,23 @@ class LoginViewSet(CreateViewSet):
         
 
 
-class MeViewSet(ListViewSet):
-    authentication_classes = ()  # ToDO Specify Auth class
-    permission_classes = ()
-    serializer_class = None  # ToDO Specify serializer_class class
+class MeViewSet(ViewSet, RetrieveAPIView):
+    authentication_classes = [SessionAuthentication]  # Specify the authentication classes you want to use (e.g., SessionAuthentication, TokenAuthentication)
+    permission_classes = [IsAuthenticated]  # Ensure only authenticated users can access this endpoint
+    serializer_class = UserSerializer  # Specify your user serializer class here
     queryset = get_user_model().objects.all()
 
-    def list(self, request, *args, **kwargs):
-        # ToDO:  Add your code
-        return Response({})
+    def retrieve(self, request, *args, **kwargs):
+        user = request.user  # Fetch the authenticated user
+
+        # Serialize the user data using your serializer class
+        serializer = self.serializer_class(user)
+
+ 
+        return Response(serializer.data, status=status.HTTP_200_OK)
+import json
+
+#############       
+def population_chart(request):
+    population_data = CountryPopulation.objects.all()
+    return render(request, 'population_chart.html', {'population_data': population_data})

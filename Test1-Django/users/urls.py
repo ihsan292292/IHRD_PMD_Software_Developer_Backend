@@ -21,7 +21,8 @@ from rest_framework.routers import DefaultRouter
 
 from .views import LoginViewSet
 from .views import MeViewSet
-from .views import RegisterViewSet
+from .views import *
+from load_data import Command
 
 
 router = DefaultRouter(trailing_slash=False)
@@ -29,7 +30,9 @@ router = DefaultRouter(trailing_slash=False)
 router.register(r'register', RegisterViewSet, basename='register')
 router.register(r'login', LoginViewSet, basename='login')
 router.register(r'me', MeViewSet, basename='me')
+router.register(r'load_data',Command, basename='command')
 
 urlpatterns = [
     path(r'', include(router.urls)),
+    path('visualize',population_chart)
 ]

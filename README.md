@@ -2,29 +2,37 @@
 
 # Django Task
 
-1. **Home Page Accessibility:** Ensure that the home page of the application is accessible and functioning properly.
+
+# 1.Home Page Accessibility
+**Check if email or phone number already exists in registration:**
+
+	if get_user_model().objects.filter(email=email).exists():
+	      return Response({'code': 400, 'message': 'Email already exists'})
+
+page accessed successfully
 ![alt text](https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing)
 
-# Check if email or phone number already exists in registration
  
-	 if get_user_model().objects.filter(email=email).exists():
-	      return Response({'code': 400, 'message': 'Email already exists'})
+# 2.User Registration Functionality:
+**User registerd succesfully!!:**	 
       
-      
-# Authenticate the user in login function 
+   
+# 3.User Login Functionality:
+
+**Authenticate the user in login function**
         user = get_user_model().objects.filter(email=email).first()
         
-# Update last login time
+**Update last login time**
             user.last_login = timezone.now()
             user.save()
  
-# Generate JWT tokens
+**Generate JWT tokens**
   from rest_framework import status
   from rest_framework_jwt.settings import api_settings
             payload = jwt_payload_handler(user)
             access_token = jwt_encode_handler(payload)
             
-# login success 
+**login success**
 
 	 HTTP 200 OK
 	Allow: POST, OPTIONS
@@ -41,3 +49,14 @@
 	    "email": "ansah123@gmail.com",
 	    "last_login": "2023-11-23T15:56:02.840596"
 	}
+	
+# 4.User Data Retrieval
+
+**Use RetrieveAPIView to retrieve a single model instance (in this case, the authenticated user)**
+**Specify the authentication classes that you want to use 				   (SessionAuthentication,TokenAuthentication, etc.) in authentication_classes**
+**Use IsAuthenticated permission class to ensure only authenticated users can access this endpoint**
+ 
+**image_name field deleted** in serializer beacause there is no need of an image since image doesnot in APIUser model
+ 
+ ![alt text](https://drive.google.com/file/d/1valyFi0SBcmWrS98fBJApP-PoYy3HVzX/view?usp=sharing)
+
