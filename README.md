@@ -32,7 +32,7 @@ page accessed successfully!
             
 **login success**
 
-file:///home/ihsan/Pictures/Screenshots/list.png
+![list](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/d27c36e7-a376-45c0-89c2-2ee58b7ab5d9)
 
 	
 	
@@ -46,9 +46,9 @@ file:///home/ihsan/Pictures/Screenshots/list.png
  
 **image_name field deleted** in serializer beacause there is no need of an image since image doesnot in APIUser model
  
- ![alt text](https://drive.google.com/file/d/1valyFi0SBcmWrS98fBJApP-PoYy3HVzX/view?usp=sharing)
- 
-#5. Data Import and Visualization:
+![Screenshot from 2023-11-23 23-24-45](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/41062418-85f9-4c73-94c1-4aec391632ae)
+
+#5 Data Import and Visualization:
 
 	**data loaded from json file**
 	
