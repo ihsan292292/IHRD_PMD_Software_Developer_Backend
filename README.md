@@ -10,7 +10,7 @@
 	      return Response({'code': 400, 'message': 'Email already exists'})
 
 page accessed successfully
-![alt text](https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing)
+![My Remote Image](https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing)
 
  
 # 2.User Registration Functionality:
@@ -206,5 +206,20 @@ page accessed successfully
 	  // Redirect to the login page or update UI accordingly
 	  window.location.href = '/login'; // Redirect to login page
 	}
+	
+	
+	
+	
+# FastAPi Task
+
+**run via :** http://0.0.0.0:5001/
+
+**Setup FastAPI and Pandas:**
+
+**Load Netflix dataset into a Pandas DataFrame**
+
+	netflix_data = pd.read_csv("dataset_netflix.csv")
+
+
 
 
