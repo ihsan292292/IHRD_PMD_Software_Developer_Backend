@@ -10,7 +10,7 @@
 	      return Response({'code': 400, 'message': 'Email already exists'})
 
 page accessed successfully
-![My Remote Image](https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing)
+https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing
 
  
 # 2.User Registration Functionality:
