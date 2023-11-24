@@ -120,6 +120,10 @@ page accessed successfully!
 	plt.tight_layout()
 	plt.show()
 	plt.savefig('population_chart.png')
+ 
+![Screenshot from 2023-11-24 09-13-06](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/4e8fdb40-fd8c-40eb-a3e4-81d2ffcf8313)
+
+
 
 	def display_population_table(request):
 	    queryset = CountryPopulation.objects.all()
@@ -205,6 +209,12 @@ page accessed successfully!
 **Load Netflix dataset into a Pandas DataFrame**
 
 	netflix_data = pd.read_csv("dataset_netflix.csv")
+
+ **visualize using bar and pie chart**
+ 
+![Screenshot from 2023-11-24 08-21-28](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/4ba902a7-0267-47a1-be90-a8a8aa30ad8c)
+
+![Screenshot from 2023-11-24 08-26-08](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/85df3b01-6e24-4d08-bd1f-037f2d28c199)
 
 
 
