@@ -3,21 +3,20 @@
 # Django Task
 
 
-# 1.Home Page Accessibility
+## 1.Home Page Accessibility
 **Check if email or phone number already exists in registration:**
 
 	if get_user_model().objects.filter(email=email).exists():
 	      return Response({'code': 400, 'message': 'Email already exists'})
 
 page accessed successfully
-![My Remote Image](https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing)
 
  
-# 2.User Registration Functionality:
+## 2.User Registration Functionality:
 **User registerd succesfully!!:**	 
       
    
-# 3.User Login Functionality:
+## 3.User Login Functionality:
 
 **Authenticate the user in login function**
         user = get_user_model().objects.filter(email=email).first()
@@ -34,23 +33,10 @@ page accessed successfully
             
 **login success**
 
-	 HTTP 200 OK
-	Allow: POST, OPTIONS
-	Content-Type: application/json
-	Vary: Accept
+![list](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/82b3be48-2cfb-491a-b0ae-f14dccb8a00a)
 
-	{
-	    "code": 200,
-	    "message": "success",
-	    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImFuc2FoMTIzQGdtYWlsLmNvbSIsImV4cCI6MTcwMDc1NTI2MiwiZW1haWwiOiJhbnNhaDEyM0BnbWFpbC5jb20ifQ.4ZxVjPyBN1RxTD8KfxoONkqJbeIUh83gM2nbojXI-RA",
-	    "refresh_token": "refresh_token",
-	    "user_id": 2,
-	    "name": "ansah",
-	    "email": "ansah123@gmail.com",
-	    "last_login": "2023-11-23T15:56:02.840596"
-	}
 	
-# 4.User Data Retrieval
+## 4.User Data Retrieval
 
 **Use RetrieveAPIView to retrieve a single model instance (in this case, the authenticated user)**
 
@@ -60,9 +46,10 @@ page accessed successfully
  
 **image_name field deleted** in serializer beacause there is no need of an image since image doesnot in APIUser model
  
- ![alt text](https://drive.google.com/file/d/1valyFi0SBcmWrS98fBJApP-PoYy3HVzX/view?usp=sharing)
+![Screenshot from 2023-11-23 23-24-45](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/ad1b0dff-8fff-4f89-992f-bf5abfe78e23)
+
  
-# 5.Data Import and Visualization:
+## 5.Data Import and Visualization:
 
 	**data loaded from json file**
 	
@@ -94,6 +81,20 @@ page accessed successfully
 	conn.close()
 		
 	**viewd in sql table**
+
+ |      | country | population |
+| — — — | — — — — — -| — — — — — |
+	|0      |         India | 9028361192
+	|1      |        China  |  9174463823
+	|2      | United States | 2222562101
+	|3      |     Indonesia | 1768676464
+	|4      |      Pakistan | 1547597303
+	|..     |          ...         ...
+	|229    |    Montserrat |      38386
+	|230    | Falkland Islands |       23726
+	|231    |          Niue    |   15436
+	|232    |       Tokelau    |   12920
+	|233    |  Vatican City    |    4300
 	
 			  country  population
 	0               India  9028361192
@@ -150,7 +151,7 @@ page accessed successfully
 	    return render(request, 'population_table.html', {'population_table': population_table})
 	    
 	    
-# 6.Advanced Search Functionality
+## 6.Advanced Search Functionality
 
 	import json
 	
@@ -194,7 +195,7 @@ page accessed successfully
 	for result in results:
 	    print(result)
 
-# 7.Add a Logout button:
+## 7.Add a Logout button:
 
 	// Logout functionality in JavaScript (example using localStorage)
 
