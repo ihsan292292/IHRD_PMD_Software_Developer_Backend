@@ -62,7 +62,7 @@ page accessed successfully
  
  ![alt text](https://drive.google.com/file/d/1valyFi0SBcmWrS98fBJApP-PoYy3HVzX/view?usp=sharing)
  
-#5. Data Import and Visualization:
+# 5.Data Import and Visualization:
 
 	**data loaded from json file**
 	
