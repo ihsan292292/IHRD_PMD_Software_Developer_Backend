@@ -9,12 +9,11 @@
 	if get_user_model().objects.filter(email=email).exists():
 	      return Response({'code': 400, 'message': 'Email already exists'})
 
-page accessed successfully![Screenshot from 2023-11-23 12-42-50](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/f08fea54-e996-4908-9d28-b434421c6698)
-
+page accessed successfully!
  
 # 2.User Registration Functionality:
 **User registerd succesfully!!:**	 
-      
+
    
 # 3.User Login Functionality:
 
@@ -33,21 +32,9 @@ page accessed successfully![Screenshot from 2023-11-23 12-42-50](https://github.
             
 **login success**
 
-	 HTTP 200 OK
-	Allow: POST, OPTIONS
-	Content-Type: application/json
-	Vary: Accept
+file:///home/ihsan/Pictures/Screenshots/list.png
 
-	{
-	    "code": 200,
-	    "message": "success",
-	    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImFuc2FoMTIzQGdtYWlsLmNvbSIsImV4cCI6MTcwMDc1NTI2MiwiZW1haWwiOiJhbnNhaDEyM0BnbWFpbC5jb20ifQ.4ZxVjPyBN1RxTD8KfxoONkqJbeIUh83gM2nbojXI-RA",
-	    "refresh_token": "refresh_token",
-	    "user_id": 2,
-	    "name": "ansah",
-	    "email": "ansah123@gmail.com",
-	    "last_login": "2023-11-23T15:56:02.840596"
-	}
+	
 	
 # 4.User Data Retrieval
 
