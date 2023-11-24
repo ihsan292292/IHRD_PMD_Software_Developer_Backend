@@ -9,8 +9,7 @@
 	if get_user_model().objects.filter(email=email).exists():
 	      return Response({'code': 400, 'message': 'Email already exists'})
 
-page accessed successfully
-https://drive.google.com/file/d/1btYMhjLKNKOpSPbQ35u0I2t25cskyBzU/view?usp=sharing
+page accessed successfully![Screenshot from 2023-11-23 12-42-50](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/f08fea54-e996-4908-9d28-b434421c6698)
 
  
 # 2.User Registration Functionality:
