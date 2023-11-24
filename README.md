@@ -123,6 +123,9 @@ page accessed successfully
 	plt.show()
 	plt.savefig('population_chart.png')
 
+ ![Screenshot from 2023-11-24 09-13-06](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/e53e2255-2b17-46a7-8b7e-c240daa6c44b)
+
+
 	def display_population_table(request):
 	    queryset = CountryPopulation.objects.all()
 
