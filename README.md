@@ -82,19 +82,6 @@ page accessed successfully
 		
 	**viewd in sql table**
 
- 	|      | country | population |
-	| — — — | — — — — — -| — — — — — |
-	|0      |         India | 9028361192 |
-	|1      |        China  |  9174463823 |
-	|2      | United States | 2222562101 |
-	|3      |     Indonesia | 1768676464 |
-	|4      |      Pakistan | 1547597303 |
-	|..     |          ...  |       ... |
-	|229    |    Montserrat |      38386 |
-	|230    | Falkland Islands |       23726 |
-	|231    |          Niue    |   15436 |
-	|232    |       Tokelau    |   12920 |
-	|233    |  Vatican City    |    4300 |
 	
 			  country  population
 	0               India  9028361192
