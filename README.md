@@ -208,6 +208,12 @@ page accessed successfully
 
 	netflix_data = pd.read_csv("dataset_netflix.csv")
 
+ **data visualized using pie and bar chart**
+
+ 
+![Screenshot from 2023-11-24 08-21-28](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/8c248364-717f-46c9-932e-1cc751520e14)
 
 
 
+
+![Screenshot from 2023-11-24 08-26-08](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/2eb57245-5248-4cc1-8235-20ddcfbebfb5)
