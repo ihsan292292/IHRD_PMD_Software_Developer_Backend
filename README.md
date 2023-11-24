@@ -1,9 +1,9 @@
 # IHRD_PMD_Software_Developer_Backend
 
-###### Django Task #######
+# Django Task
 
 
-# 1.Home Page Accessibility
+## 1.Home Page Accessibility
 **Check if email or phone number already exists in registration:**
 
 	if get_user_model().objects.filter(email=email).exists():
@@ -11,11 +11,11 @@
 
 page accessed successfully!
  
-# 2.User Registration Functionality:
+## 2.User Registration Functionality:
 **User registerd succesfully!!:**	 
 
    
-# 3.User Login Functionality:
+## 3.User Login Functionality:
 
 **Authenticate the user in login function**
         user = get_user_model().objects.filter(email=email).first()
@@ -36,7 +36,7 @@ page accessed successfully!
 
 	
 	
-# 4.User Data Retrieval
+## 4.User Data Retrieval
 
 **Use RetrieveAPIView to retrieve a single model instance (in this case, the authenticated user)**
 
@@ -48,7 +48,7 @@ page accessed successfully!
  
 ![Screenshot from 2023-11-23 23-24-45](https://github.com/ihsan292292/IHRD_PMD_Software_Developer_Backend/assets/97184876/41062418-85f9-4c73-94c1-4aec391632ae)
 
-# 5 Data Import and Visualization:
+## 5 Data Import and Visualization:
 
 	**data loaded from json file**
 	
@@ -140,7 +140,7 @@ page accessed successfully!
 	    return render(request, 'population_table.html', {'population_table': population_table})
 	    
 	    
-# 6.Advanced Search Functionality
+## 6.Advanced Search Functionality
 
 	import json
 	
@@ -184,7 +184,7 @@ page accessed successfully!
 	for result in results:
 	    print(result)
 
-# 7.Add a Logout button:
+## 7.Add a Logout button:
 
 	// Logout functionality in JavaScript (example using localStorage)
 
@@ -200,7 +200,7 @@ page accessed successfully!
 	
 	
 	
-###### FastAPi Task ######
+# FastAPi Task
 
 **run via :** http://0.0.0.0:5001/
 
